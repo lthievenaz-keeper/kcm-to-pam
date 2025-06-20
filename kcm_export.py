@@ -25,8 +25,8 @@ def run_kcm_export():
                 'user': db_user,
                 'password': db_password,
                 'database': db_name,
-                'port': 3306  # Default MySQL port
-                #'ssl_disabled': True # For self-signed staging hosts
+                'port': 3306
+                # 'ssl_disabled':True # For self-signed hosts
             }
 
     def build_connection_group_paths(cursor):
@@ -144,7 +144,7 @@ def run_kcm_export():
 
     # Get the database configuration from docker-compose.yml
     db_config = get_db_config_from_compose()
-    export_to_json(db_config)
+    return export_to_json(db_config)
 
 def unpack_export(data):
     result = {}
