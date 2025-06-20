@@ -48,7 +48,11 @@ def cli_prompts():
             Input: ''')
     
         if export_method == '1':
-            json_data = run_kcm_export()
+            try:
+                shared_folders = unpack_export(run_kcm_export())
+                print('Export successful.')
+            except Exception as e:
+                    print(e)
         elif export_method == '2':
             success = False
             while not success:
