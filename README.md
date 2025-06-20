@@ -6,6 +6,8 @@ Allows you to convert KCM connections to a PAM framework, in one of two ways:
 - Using existing KCM connection records if you're using Dynamic Tokens.
   - If there is a hostname and port on the record, it will be used, else a default '1.1.1.1:22' hostname will be created.
 
+Supports the use of an existing KSM application / gateway.
+
 Required dependencies:  
 ```
 pip install keepercommander
