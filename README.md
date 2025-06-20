@@ -12,7 +12,7 @@ Required dependencies:
 ```
 pip install keepercommander
 ```  
-For the internal JSON export:  
+If running the KCM JSON export:  
 ```
 pip install mysql-connector-python
 pip install pyYAML
