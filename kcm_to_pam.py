@@ -50,7 +50,7 @@ def cli_prompts():
         if export_method == '1':
             try:
                 shared_folders = unpack_export(run_kcm_export())
-                print('Export successful.')
+                print('Parsing successful.')
             except Exception as e:
                     print(e)
         elif export_method == '2':
