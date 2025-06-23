@@ -171,6 +171,8 @@ def unpack_export(data):
                     'password':obj['parameters']['password']
                 }
         except:
+            print('Unable to parse object:')
             print(obj)
+    print('KCM export successful.')
     return result
         
