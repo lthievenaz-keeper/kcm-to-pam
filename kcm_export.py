@@ -153,21 +153,24 @@ def unpack_export(data):
         obj['group'] = obj['group'].replace('/','//')
         if obj['group'] not in result:
             result[obj['group']] = {}
-        if obj['protocol'] == 'http':
-            result[obj['group']][obj['name']]={
-                'url': obj['parameters']['url'],
-                'autofill': obj['parameters']['autofill-configuration'],
-                'protocol':obj['protocol'],
-                'username':obj['parameters']['username'],
-                'password':obj['parameters']['password']
-            }
-        else:
-            result[obj['group']][obj['name']]={
-                'hostname': obj['parameters']['hostname'],
-                'port': obj['parameters']['port'],
-                'protocol':obj['protocol'],
-                'username':obj['parameters']['username'],
-                'password':obj['parameters']['password']
-            }
+        try:
+            if obj['protocol'] == 'http':
+                result[obj['group']][obj['name']]={
+                    'url': obj['parameters']['url'],
+                    'autofill': obj['parameters']['autofill-configuration'],
+                    'protocol':obj['protocol'],
+                    'username':obj['parameters']['username'],
+                    'password':obj['parameters']['password']
+                }
+            else:
+                result[obj['group']][obj['name']]={
+                    'hostname': obj['parameters']['hostname'],
+                    'port': obj['parameters']['port'],
+                    'protocol':obj['protocol'],
+                    'username':obj['parameters']['username'],
+                    'password':obj['parameters']['password']
+                }
+        except:
+            print(obj)
     return result
         
