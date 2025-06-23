@@ -131,6 +131,7 @@ def run_kcm_export():
             connection_list = [conn for conn in connections.values()]
 
             # Output the data to a JSON file
+            print('KCM export successful')
             return connection_list
 
         except mysql.connector.Error as err:
@@ -173,6 +174,5 @@ def unpack_export(data):
         except:
             print('Unable to parse object:')
             print(obj)
-    print('KCM export successful.')
     return result
         
